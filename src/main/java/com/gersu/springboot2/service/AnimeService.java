@@ -18,8 +18,13 @@ import java.util.List;
 public class AnimeService {
 
     private final AnimeRepository animeRepository;
+
     public Page<Anime> listAll(Pageable pageable) {
         return animeRepository.findAll(pageable);
+    }
+
+    public List<Anime> listAllNonPageable() {
+        return animeRepository.findAll();
     }
 
     public List<Anime> findByName(String name) {
